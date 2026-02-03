@@ -1,0 +1,199 @@
+/* ===== GLOBAL STYLES ===== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(160deg, #0d0d0d, #1a1a1a, #101820);
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  padding: 15px 30px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+.logo {
+  text-decoration: none;
+  color: #fff;
+}
+.logo span {
+  color: #ff4b4b;
+}
+
+/* ===== ANIME DETAIL SECTION ===== */
+.anime-detail {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 25px;
+  align-items: center;
+  padding: 40px 10%;
+}
+
+.anime-left img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 6px 25px rgba(255, 75, 75, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.anime-left img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 35px rgba(255, 75, 75, 0.6);
+}
+
+.anime-right h1 {
+  margin: 0 0 15px;
+  font-size: 2.4rem;
+  letter-spacing: 1px;
+  color: #ff4b4b;
+}
+
+.anime-right p {
+  color: #e0e0e0;
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* ===== SEASON BUTTONS ===== */
+.season-section {
+  padding: 20px;
+  text-align: center;
+}
+
+.season-btn-container {
+  margin: 20px 0;
+}
+
+.season-btn {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  border: none;
+  padding: 12px 30px;
+  margin: 10px;
+  border-radius: 30px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 65, 108, 0.4);
+  transition: all 0.3s ease;
+}
+.season-btn:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+  box-shadow: 0 6px 20px rgba(255, 65, 108, 0.6);
+}
+
+/* ===== PLAYER + EPISODES SECTION ===== */
+.player-wrapper {
+  display: flex;
+  max-width: 1000px;
+  margin: 30px auto;
+  gap: 20px;
+  align-items: flex-start;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Video Container */
+.video-container {
+  flex: 3;
+  background: #000;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(255, 75, 75, 0.4);
+}
+.video-container iframe {
+  width: 100%;
+  height: 450px;
+  display: block;
+  border: none;
+}
+
+/* Episode Sidebar */
+.episode-list {
+  flex: 1;
+  max-height: 450px;
+  overflow-y: auto;
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+/* Scrollbar Styling */
+.episode-list::-webkit-scrollbar {
+  width: 8px;
+}
+.episode-list::-webkit-scrollbar-track {
+  background: #111;
+  border-radius: 10px;
+}
+.episode-list::-webkit-scrollbar-thumb {
+  background: #ff4b4b;
+  border-radius: 10px;
+}
+.episode-list::-webkit-scrollbar-thumb:hover {
+  background: #ff2b2b;
+}
+
+/* Episode Card */
+.episode-card {
+  background: #2a2a2a;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+  border: 2px solid transparent;
+}
+.episode-card:hover {
+  background: #ff4b4b;
+  transform: scale(1.05);
+}
+
+/* Highlight Active Episode */
+.active-episode {
+  border: 2px solid #ff4b4b;
+  background: #1f1f1f;
+  box-shadow: 0 0 12px rgba(255, 75, 75, 0.6);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .anime-detail {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .player-wrapper {
+    flex-direction: column;
+    max-width: 95%;
+  }
+
+  .episode-list {
+    max-height: 200px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: auto;
+  }
+}

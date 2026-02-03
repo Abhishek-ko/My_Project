@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dan Da Dan - Anime Details</title>
+  <link rel="stylesheet" href="dandadan.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="home.html" class="logo">Anime<span>Roll</span></a>
+  </header>
+
+  <!-- Anime Info Section -->
+  <section class="anime-detail">
+    <div class="anime-left">
+      <img src="https://comicbook.com/wp-content/uploads/sites/4/2024/12/Dandadan-Season-2-Anime-Poster.jpg?resize=1086,1536" alt="Dandadan Poster">
+    </div>
+    <div class="anime-right">
+      <h1>Dan Da Dan</h1>
+      <p>
+        Dan Da Dan is a thrilling supernatural action-comedy anime following Momo, a girl who believes in ghosts, and Okarun, a boy who believes in aliens.
+        Together, they face aliens, ghosts, and bizarre supernatural forces in an action-packed and hilarious journey.
+      </p>
+    </div>
+  </section>
+
+  <!-- Season Buttons -->
+  <section class="season-section">
+    <h2>Seasons</h2>
+    <div class="season-btn-container">
+      <button class="season-btn" onclick="showEpisodes('s1')">Season 1</button>
+      <button class="season-btn" onclick="showEpisodes('s2')">Season 2</button>
+    </div>
+
+    <!-- Player + Episode List -->
+    <div class="player-wrapper" id="player-wrapper" style="display:none;">
+      
+      <!-- Episode Sidebar -->
+      <div id="episode-list" class="episode-list"></div>
+
+      <!-- YouTube Video Player -->
+      <div class="video-container">
+        <iframe id="video-player" width="100%" height="450" src="" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+        <p id="error-message" style="display: none; color: red;">Video unavailable. Please check back later or watch on YouTube.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    const episodes = {
+      s1: [
+        { title: "Episode 1", file: "D7Ra2B2Sl10" },
+        { title: "Episode 2", file: "xY1tUog3a6w" },
+        { title: "Episode 3", file: "J2lwsFjE4C4" },
+        { title: "Episode 4", file: "FSTkL9cT__A" },
+        { title: "Episode 5", file: "uvwx6789" },
+        { title: "Episode 6", file: "yzab0123" },
+        { title: "Episode 7", file: "cdef4567" },
+        { title: "Episode 8", file: "ghij8901" },
+        { title: "Episode 9", file: "klmn2345" },
+        { title: "Episode 10", file: "opqr6789" },
+        { title: "Episode 11", file: "stuv0123" },
+        { title: "Episode 12", file: "wxyz4567" },
+      ],
+      s2: [
+        { title: "Episode 1", file: "WwA8V3WgGQU" },
+        { title: "Episode 2", file: "HZJgyV-tLRw" },
+        { title: "Episode 3", file: "2iwA3F60lKs" },
+        { title: "Episode 4", file: "mnop3456" },
+        { title: "Episode 5", file: "qrst7890" },
+        { title: "Episode 6", file: "uvwx1234" },
+        { title: "Episode 7", file: "yzab5678" },
+        { title: "Episode 8", file: "cdef9012" },
+        { title: "Episode 9", file: "ghij3456" },
+        { title: "Episode 10", file: "klmn7890" },
+        { title: "Episode 11", file: "opqr1234" },
+        { title: "Episode 12", file: "stuv5678" },
+      ]
+    };
+
+    let activeEpisodeDiv = null;
+
+    function showEpisodes(season) {
+      const wrapper = document.getElementById("player-wrapper");
+      const container = document.getElementById("episode-list");
+      wrapper.style.display = "flex";
+      container.innerHTML = "";
+      activeEpisodeDiv = null;
+
+      episodes[season].forEach(ep => {
+        const epDiv = document.createElement("div");
+        epDiv.classList.add("episode-card");
+        epDiv.innerHTML = `<span>${ep.title}</span>`;
+        epDiv.onclick = () => playEpisode(ep.file, epDiv);
+        container.appendChild(epDiv);
+      });
+
+      // Automatically play the first episode
+      const first = container.querySelector(".episode-card");
+      if (first) playEpisode(episodes[season][0].file, first);
+    }
+
+    function playEpisode(file, epDiv) {
+      const iframe = document.getElementById("video-player");
+      const errorMessage = document.getElementById("error-message");
+
+      iframe.src = `https://www.youtube.com/embed/${file}?autoplay=1`;
+
+      // Check for load error
+      setTimeout(() => {
+        if (!iframe.src || iframe.src.indexOf(file) === -1) {
+          errorMessage.style.display = "block";
+        } else {
+          errorMessage.style.display = "none";
+        }
+      }, 3000);
+
+      // Highlight active episode
+      if (activeEpisodeDiv) activeEpisodeDiv.classList.remove("active-episode");
+      epDiv.classList.add("active-episode");
+      activeEpisodeDiv = epDiv;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnimeRoll</title>
+  <link rel="stylesheet" href="home.css">
+  <style>
+    /* Smooth Scroll for Page */
+    html {
+      scroll-behavior: smooth;
+    }
+    /* Optional: make card-row scroll smooth even on mousewheel/touchpad */
+    .card-row {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="logo">Anime<span>Roll</span></div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#action">Anime</a>
+      <a href="#romance">Movies</a>
+      <a href="#comedy">comedy</a>
+      <a href="#mystery">mystery</a>
+
+      <!-- Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn">Categories</button>
+        <div class="dropdown-content">
+          <a href="#Action/Shounen">Action/Shounen</a>
+          <a href="#Fantasy/Isekai">Fantasy/Isekai</a>
+          <a href="#comedy">Comedy</a>
+          <a href="#Drama/Psychological">Drama/Psychological</a>
+           <a href="#Mystery/Slice of Life">Mystery/Slice of Life</a>
+           <a href="#Romance/Rom‑Com">Romance/Rom‑Com</a>
+           <a href="#supernatural">Supernatural</a>
+           <a href="#adventure">Adventure</a>
+        </div>
+      </div>
+    </nav>
+    <div class="auth">
+      <button class="btn">Login</button>
+      <button class="btn btn-primary">Sign Up</button>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Stream the Best Anime Anytime</h1>
+      <p>Discover top anime shows & movies – free and powered by YouTube.</p>
+      <button class="btn btn-primary">Start Watching</button>
+    </div>
+  </section>
+
+  <!-- Trending -->
+<section class="section" id="trending">
+  <h2>🔥 Trending Now</h2>
+  <div class="scroll-container">
+    <button class="scroll-btn left" onclick="scrollRow(this, -1)">&#10094;</button>
+    <div class="card-row">
+      
+      <!-- Link Dandadan Card to dandadan.html -->
+      <a href="dandadan.html" class="card">
+        <img src="https://comicbook.com/wp-content/uploads/sites/4/2024/12/Dandadan-Season-2-Anime-Poster.jpg?resize=1086,1536">
+        <p>Dan Da Dan</p>
+      </a>
+
+      <!-- Keep other cards as normal -->
+      <div class="card"><img src="https://i.ibb.co/Lp5bL6c/onepiece.jpg"><p>One Piece</p></div>
+      <div class="card"><img src="https://i.ibb.co/DQszVdS/demonslayer.jpg"><p>Demon Slayer</p></div>
+      <div class="card"><img src="https://i.ibb.co/4d0h9Ys/attackontitan.jpg"><p>Attack on Titan</p></div>
+      <div class="card"><img src="https://i.ibb.co/7g4pR8B/jujutsukaisen.jpg"><p>Jujutsu Kaisen</p></div>
+      <div class="card"><img src="https://i.ibb.co/HqjFMmn/spyxfamily.jpg"><p>Spy x Family</p></div>
+    </div>
+    <button class="scroll-btn right" onclick="scrollRow(this, 1)">&#10095;</button>
+  </div>
+</section>
+
+
+  <!-- Action -->
+  <section class="section" id="action">
+    <h2>⚔️ Action</h2>
+    <div class="scroll-container">
+      <button class="scroll-btn left" onclick="scrollRow(this, -1)">&#10094;</button>
+      <div class="card-row">
+        <div class="card"><img src="https://m.media-amazon.com/images/S/pv-target-images/e710107bc0c1f1fb796df14258427e7507ffe9128ca6e3d23fc30a35e7408f16.jpg"><p>One Punch Man</p></div>
+        <div class="card"><img src="https://m.media-amazon.com/images/M/MV5BYzU3NDM4ZjgtY2UyMi00YTczLTgyNDEtMjBiMDJlOGUxNjcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"><p>Mob Psycho 100</p></div>
+        <div class="card"><img src="https://m.media-amazon.com/images/M/MV5BNGYzMjBhMTMtM2Q4YS00OGMyLTk2ZWItYTg3MDk2YWIxNmVkXkEyXkFqcGc@._V1_.jpg"><p>Tokyo Revengers</p></div>
+        <div class="card"><img src="https://m.media-amazon.com/images/M/MV5BOTczMjM3MDUtYmZjMC00YzZhLWE4ODQtNjg5YWU4NTJjNzY2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"><p>That time i got reincarnated as a slime</p></div>
+        <div class="card"><img src="https://m.media-amazon.com/images/M/MV5BMzIyNzY4NTMtNmVhYS00OWFhLTkwMWMtOGFkNTdmNWU2ZDdiXkEyXkFqcGc@._V1_.jpg"><p>Jojo's Bizarre Adventure</p></div>
+        <div class="card"><img src="https://m.media-amazon.com/images/M/MV5BODgxZGI4NjQtODViMy00Y2JmLWI1MTktNWExMjlmMmZhMzE3XkEyXkFqcGc@._V1_.jpg"><p>Seven deadly sins</p></div>
+        <div class="card"><img src="https://m.media-amazon.com/images/M/MV5BYzYxOTlkYzctNGY2MC00MjNjLWIxOWMtY2QwYjcxZWIwMmEwXkEyXkFqcGc@._V1_.jpg"><p>Hunter x Hunter</p></div>
+      </div>
+      <button class="scroll-btn right" onclick="scrollRow(this, 1)">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Romance -->
+  <section class="section" id="Romance/Rom‑Com">
+    <h2>Romance/Rom‑Com</h2>
+    <div class="scroll-container">
+      <button class="scroll-btn left" onclick="scrollRow(this, -1)">&#10094;</button>
+      <div class="card-row">
+        <div class="card"><img src="https://m.media-amazon.com/images/M/MV5BYzM0MGRlMzEtMWIwNi00ZjAzLWIzODItMDNlNmM0MGU4MTY5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"><p>Shikimori’s Not Just a Cutie</p></div>
+        <div class="card"><img src="https://m.media-amazon.com/images/M/MV5BZDkwNjc0NWEtNzJlOC00N2YwLTk4MjktZGFlZDE2Y2QzOWI0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"><p>Spy x Family</p></div>
+        <div class="card"><img src="https://m.media-amazon.com/images/M/MV5BNThiMDM2MTktNGMwYi00NTY3LWEyMzQtNDg1NDBlYWIwYTU3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"><p>Rent a girlfriend</p></div>
+        <div class="card"><img src="https://m.media-amazon.com/images/M/MV5BODk5M2MzZWMtMDY5NS00MzM0LTkyOTgtZWQxNWNmOWUwNmYwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"><p>Higehiro: After Being Rejected…</p></div>
+
+        <div class="card"><img src="https://i.ibb.co/mTTQHkK/weatheringwithyou.jpg"><p>girlfriend girlfriend</p></div>
+        <div class="card"><img src="https://i.ibb.co/pv6J3MW/kaguyasama.jpg"><p>Kaguya-sama</p></div>
+      </div>
+      <button class="scroll-btn right" onclick="scrollRow(this, 1)">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Comedy -->
+  <section class="section" id="comedy">
+    <h2>🪄 Fantasy</h2>
+    <div class="scroll-container">
+      <button class="scroll-btn left" onclick="scrollRow(this, -1)">&#10094;</button>
+      <div class="card-row">
+        <div class="card"><img src="https://m.media-amazon.com/images/M/MV5BYWQwNjk3MDItNDAxMS00YTQ2LWEyNDctMGYyZTE5OGQxNGQ1XkEyXkFqcGc@._V1_.jpg"><p>Mushoku Tensei</p></div>
+        <div class="card"><img src="https://i.ibb.co/xD4R09t/konosuba.jpg"><p>KonoSuba</p></div>
+        <div class="card"><img src="https://i.ibb.co/7W5TvmL/nichijou.jpg"><p>Nichijou</p></div>
+        <div class="card"><img src="https://i.ibb.co/PZ5q7FG/onepunch.jpg"><p>One Punch Man</p></div>
+        <!-- Added More -->
+        <div class="card"><img src="https://i.ibb.co/XL5HcSL/rezero.jpg"><p>Re:Zero</p></div>
+        <div class="card"><img src="https://i.ibb.co/dL5N58k/overlord.jpg"><p>Overlord</p></div>
+      </div>
+      <button class="scroll-btn right" onclick="scrollRow(this, 1)">&#10095;</button>
+    </div>
+  </section>
+  <section class="section" id="mystery">
+    <h2>🕵️ Mystery</h2>
+    <div class="scroll-container">
+      <button class="scroll-btn left" onclick="scrollRow(this, -1)">&#10094;</button>
+      <div class="card-row">
+        <div class="card"><img src="https://m.media-amazon.com/images/M/MV5BM2JlY2YzY2ItYTZhZi00ZGI3LWI3NmUtYTIyMjBiZGM3ZTJjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"><p>Erased</p></div>
+        <div class="card"><img src="https://m.media-amazon.com/images/M/MV5BMjA0OTc5NjYtZjYwZi00ZjQzLTlkZTAtZGI3Y2E3Njc4ZmY0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"><p>Hyouka</p></div>
+        <div class="card"><img src="https://m.media-amazon.com/images/M/MV5BMTc5OTc4NjAzOF5BMl5BanBnXkFtZTgwOTc4MjQzMDE@._V1_FMjpg_UX1000_.jpg"><p>Death Note</p></div>
+        <div class="card"><img src="https://m.media-amazon.com/images/M/MV5BMTYzOTc5NjYtZjYwZi00ZjQzLTlkZTAtZGI3Y2E3Njc4ZmY0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"><p>Steins;Gate</p></div>
+        <section?
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 AnimeRoll. Built for fans. Videos are from YouTube, no server hosting.</p>
+  </footer>
+
+  <!-- Scroll Script -->
+  <script>
+    function scrollRow(btn, direction) {
+      const container = btn.parentElement.querySelector(".card-row");
+      const cardWidth = container.querySelector(".card").offsetWidth + 20;
+      container.scrollBy({
+        left: cardWidth * direction,
+        behavior: "smooth"
+      });
+    }
+  </script>
+</body>
+</html>
